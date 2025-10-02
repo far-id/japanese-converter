@@ -2,6 +2,8 @@
 import express from "express";
 import Kuroshiro from "kuroshiro";
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
+import path from "path";
+
 const port = 3000;
 const app = express();
 app.use(express.json({ limit: "1mb" })); // bisa diatur limit request body
@@ -12,7 +14,7 @@ let initialized = false;
 async function ensureInit() {
   if (!initialized) {
     kuroshiro = new Kuroshiro.default();
-    await kuroshiro.init(new KuromojiAnalyzer());
+    await kuroshiro.init(new KuromojiAnalyzer({ dictPath: path.resolve("./dict") }));
     initialized = true;
   }
 }
