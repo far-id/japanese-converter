@@ -1,0 +1,18 @@
+{
+	"name": "help-you-to-read-ln",
+	"version": "1.0.0",
+	"description": "an api to help you read ln in japanese",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Farid Rizky Wijaya",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^5.1.0",
+		"kuroshiro": "^1.2.0",
+		"kuroshiro-analyzer-kuromoji": "^1.1.0"
+	}
+}
